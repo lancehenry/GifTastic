@@ -1,5 +1,5 @@
 var key = "pqiitu4zMJkZ8McUt0eKXF5mwcAZy2AQ";
-var gifURL = "https://api.giphy.com/v1/gifs/search?q=Scrubs&api_key=" + key + "&limit=10";
+var gifURL = "https://api.giphy.com/v1/gifs/search?q=Saturday+Night+Live&api_key=" + key + "&limit=10";
 console.log(gifURL);
 
 $.ajax({

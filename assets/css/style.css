@@ -2,6 +2,6 @@
     width: 150px;
 }
 
-.navbar-static-top {
-    border-bottom: none;
+.jumbotron {
+    background-color: #dddbdc;
 }

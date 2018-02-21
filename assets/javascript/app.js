@@ -1,3 +1,20 @@
+var castMembers = ["Will Ferrell", "Eddie Murphy", "Bill Murray", "Tina Fey", "Amy Poehler"];
+
+function renderButtons() {
+    $("buttons-view").empty();
+
+    for (var i = 0; i < castMembers.length; i++) {
+        var a = $("<button>");
+        a.addClass("cast-btn");
+        a.attr("data-name", castMembers[i]);
+        a.text(castMembers[i]);
+        $("#buttons-view").append(a);
+    }
+}
+
+
+renderButtons();
+
 var key = "pqiitu4zMJkZ8McUt0eKXF5mwcAZy2AQ";
 var gifURL = "https://api.giphy.com/v1/gifs/search?q=Saturday+Night+Live&api_key=" + key + "&limit=10";
 console.log(gifURL);

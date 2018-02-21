@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 
     <!-- BOOTSTRAP CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
 
     <!-- GOOGLE FONTS LINK -->
@@ -21,7 +21,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- BOOTSTRAP JAVASCRIPT -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
     <!-- MY CSS STYLES -->
@@ -31,11 +31,35 @@
 </head>
 
 <body>
-        <nav class="navbar navbar-inverse navbar-static-top">
-                <div class="container">
-                  <img class="logo" src="assets/images/snl_logo.png">
-                </div>
-              </nav>
+    <!-- Header section -->
+    <nav class="navbar navbar-light bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img class="logo" src="assets/images/snl_logo.png">
+        </a>
+    </nav>
+
+    <!-- Jumbotron section -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+            <h1 class="display-4">Saturday Night Live Gif Generator!</h1>
+            <br>
+            <br>
+            <form id="snl-form">
+                <label for="snl-input">Add a Cast Member</label>
+                <input type="text" id="snl-input">
+                <br>
+                <br>
+                <!-- Button triggers new movie to be added -->
+                <input id="add-member" type="submit" value="Add a Cast Member">
+            </form>
+            <!-- Rendered buttons get placed here -->
+            <button type="button" class="btn btn-dark" id="buttons-view"></button>
+
+        </div>
+    </div>
+
+
+
 
     <div id="gif"></div>
 

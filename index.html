@@ -15,7 +15,7 @@
         crossorigin="anonymous">
 
     <!-- GOOGLE FONTS LINK -->
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
 
     <!-- JQUERY LINK -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -27,41 +27,44 @@
     <!-- MY CSS STYLES -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <title>Giftastic</title>
+    <title>SNL Giftastic</title>
 </head>
 
 <body>
     <!-- Header section -->
-    <nav class="navbar navbar-light bg-dark">
-        <a class="navbar-brand" href="index.html">
-            <img class="logo" src="assets/images/snl_logo.png">
+    <nav class="navbar navbar-light">
+        <a class="navbar-brand text-center" href="index.html">
+            <img class="logo" src="assets/images/snl_logo_2.png">
         </a>
     </nav>
 
     <!-- Jumbotron section -->
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container text-center">
-            <h1 class="display-4">Saturday Night Live Gif Generator!</h1>
-            <br>
-            <br>
-            <form id="snl-form">
-                <label for="snl-input">Add a Cast Member</label>
-                <input type="text" id="snl-input">
-                <br>
-                <br>
-                <!-- Button triggers new movie to be added -->
-                <input id="add-member" type="submit" value="Add a Cast Member">
-            </form>
-            <!-- Rendered buttons get placed here -->
-            <button type="button" class="btn btn-dark" id="buttons-view"></button>
+    <div class="jumbotron text-center">
+        <h1>GIF GENERATOR!</h1>
+        <p class="by-line">Add a cast member in the field below.</p>
+        <br>
 
-        </div>
+        <!-- Form input and Submit button -->
+        <form class="form-inline justify-content-center" id="snl-form">
+            <label for="snl-input" class="sr-only"></label>
+            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                <input type="text" class="form-control" id="snl-input" placeholder="Add cast member">
+            </div>
+            <button id="add-cast" type="submit" value="Add cast member"class="btn btn-danger my-2 my-sm-0">Submit</button>
+        </form>
+        <br>
+        <br>
+
+        <!-- This div holds the new buttons created -->
+        <div id="buttons-view"></div>
     </div>
 
-
-
-
-    <div id="gif"></div>
+    <!-- Container to hold the gifs -->
+    <div class="container">
+        <div class="row spacing">
+            <div class="col-lg-12 col-md-12 col-sm-12" id="gif"></div>
+        </div>
+    </div>
 
     <!-- MY JAVASCRIPT FILE -->
     <script type="text/javascript" src="assets/javascript/app.js"></script>

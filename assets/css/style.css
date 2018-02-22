@@ -1,5 +1,41 @@
+.navbar {
+    color: #fff;
+    background-color: #000;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+}
+
+.by-line {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.spacing {
+    margin: auto;
+}
+
+.btn-secondary {
+    
+    background: #4d4d4d;
+    padding: 7px 12px;
+    margin: 0 10px 10px 0;
+    border-radius: 5px;
+}
+
+/* Created button padding around entire container
+#buttons-view {
+    padding: 0 15%;
+}
+*/
+
+
+
 .logo {
-    width: 150px;
+    width: 40%;
+    align-content: center;
 }
 
 .jumbotron {

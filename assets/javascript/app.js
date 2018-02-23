@@ -8,9 +8,10 @@ $(document).ready(function () {
         $("#buttons-view").empty();
 
         for (var i = 0; i < castMembers.length; i++) {
-            
+
             var newButton = $("<button>");
-            newButton.addClass("actor" + "btn btn-secondary");
+            newButton.addClass("btn btn-secondary");
+            newButton.attr("id", "input");
             newButton.attr("data-name", castMembers[i]);
             newButton.text(castMembers[i]);
             $("#buttons-view").append(newButton);
@@ -25,16 +26,14 @@ $(document).ready(function () {
         renderButtons();
     })
 
-    renderButtons();
-
     // This function renders the HTML to display appropriate content
     function displayActorGif() {
 
+        // Create div elements for the returned gifs
+        $("#display-gif").empty();
+
         // Get the actor name from the button clicked
         var actorName = $(this).attr("data-name");
-
-        // Create div elements for the returned gifs
-        // $("#gif-view").empty();
 
         // Construct the giphy URL
         var key = "pqiitu4zMJkZ8McUt0eKXF5mwcAZy2AQ";
@@ -48,75 +47,51 @@ $(document).ready(function () {
 
             for (var i = 0; i < response.data.length; i++) {
 
+                // Creates a new div and add's a class
                 var newDiv = $("<div>");
                 newDiv.addClass("actorGif");
 
+                // Creates a new image element, populates it with correct parameters
                 var newImg = $("<img>");
-                newImg.attr("src", response.data[i].images.original_still.url);
-                newImg.attr("data-still", response.data[i].images.original_still.url);
-                newImg.attr("data-animate", response.data[i].images.original.url);
+                newImg.attr("src", response.data[i].images.fixed_height_still.url);
+                newImg.attr("data-still", response.data[i].images.fixed_height_still.url);
+                newImg.attr("data-animate", response.data[i].images.fixed_height.url);
                 newImg.attr("data-state", "still");
                 newImg.attr("class", "gif");
 
+                // Appends the newDiv variable with the newImg variable (img)
                 newDiv.append(newImg);
 
+                // Grabs the rating and stores it in newRating variable
                 var newRating = response.data[i].rating;
-                console.log(response);
-                var pRating = $("<p>").text("Rating: " + rating);
-
+                
+                // Creates a paragraph tag and appends everything to the newDiv element above
+                var pRating = $("<p>").text("Rating: " + newRating);
                 newDiv.append(pRating);
 
-                $("gif-view").append(newDiv);
+                // Manipulates the DOM by appending newDiv element to the HTML id (display-gif)
+                $("#display-gif").append(newDiv);
             }
-
         });
     }
 
-    displayActorGif();
-    // $(document).on("click", "#add-cast", displayActorGif);
+    // Change state based on whether the gif is "still" or "animate"
+    function changeState () {
+        var state = $(this).attr("data-state");
+        var animateImg = $(this).attr("data-animate");
+        var stillImg = $(this).attr("data-still");
 
-});
-
-
-
-
-
-/*
-var key = "pqiitu4zMJkZ8McUt0eKXF5mwcAZy2AQ";
-var gifURL = "https://api.giphy.com/v1/gifs/search?q=Saturday+Night+Live&api_key=" + key + "&limit=10";
-console.log(gifURL);
-
-$.ajax({
-    url: gifURL,
-    method: "GET"
-}).then(function (response) {
-
-    for (var i = 0; i < 10; i++) {
-        var newGif = response.data[i].images.fixed_height_still.url;
-
-        var test = $("<img>").attr("src", newGif);
-
-        test.addClass("dynamic");
-
-        $("#gif").append(test);
+        if (state == "still") {
+            $(this).attr("src", animateImg);
+            $(this).attr("data-state", "animate");
+        } else if (state == "animate") {
+            $(this).attr("src", stillImg);
+            $(this).attr("data-state", "still");
+        }
     }
 
-    $(".dynamic").click(function () {
+    renderButtons();
 
-        var clickedURL = $(this).attr("src");
-        console.log('---------------------');
-        console.log(clickedURL);
-        console.log('---------------------');
-        console.log('+++++++++++++++++++++++++');
-        var splitURL = clickedURL.split('_');
-        console.log(splitURL[0]);
-        console.log('+++++++++++++++++++++++++');
-        console.log('=========================');
-        var dynamicURL = splitURL[0] + '.gif';
-        console.log(dynamicURL);
-        console.log('=========================');
-        $(this).attr("src", dynamicURL);
-
-    })
-
-})*/
+    $(document).on("click", "#input", displayActorGif);
+    $(document).on("click", ".gif", changeState);
+});

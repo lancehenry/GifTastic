@@ -55,5 +55,5 @@ GIF FLOAT AND SPACING
 
 .actorGif {
     float: left;
-    margin: 12px;
+    padding-left: 15px;
 }

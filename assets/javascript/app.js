@@ -23,6 +23,7 @@ $(document).ready(function () {
         event.preventDefault();
         var actorName = $("#snl-input").val().trim();
         castMembers.push(actorName);
+        $("form").trigger("reset");
         renderButtons();
     })
 

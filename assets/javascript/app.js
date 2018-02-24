@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     // Array of cast members to populate buttons
-    var castMembers = ["Will Ferrell", "Eddie Murphy", "Bill Murray", "Tina Fey", "Amy Poehler"];
+    var castMembers = ["Chris Farley", "Eddie Murphy", "Bill Murray", "Tina Fey", "Amy Poehler"];
 
     // Loop through the castMembers array and make buttons
     function renderButtons() {

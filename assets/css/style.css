@@ -1,3 +1,7 @@
+/************************************
+BODY / JUMBOTRON / FORM / BUTTONS
+************************************/
+
 body {
     background-color: #e9e9e9;
 }
@@ -7,9 +11,16 @@ body {
     background-color: #000;
 }
 
+.logo {
+    width: 40%;
+    align-content: center;
+}
+
 .jumbotron {
+    background-image: url(../images/snl_bg3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 0;
-    /*border-bottom: #c9a207 solid 4px;*/
 }
 
 h1 {
@@ -24,14 +35,9 @@ h1 {
     font-weight: 500;
 }
 
-.spacing {
-    margin: auto;
-}
-
 .btn-secondary {
     background: #fff;
     color: #000;
-    /* background: #d83948;*/
     padding: 7px 12px;
     margin: 0 10px 10px 0;
     border: 0;
@@ -43,19 +49,11 @@ h1 {
     color: #000;
 }
 
+/************************************
+GIF FLOAT AND SPACING
+************************************/
+
 .actorGif {
     float: left;
     margin: 12px;
-}
-
-.logo {
-    width: 40%;
-    align-content: center;
-}
-
-.jumbotron {
-    background-image: url(../images/snl_bg3.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* background-color: #dddbdc;*/
 }

@@ -7,4 +7,4 @@ The user can enter any cast member from Saturday Night Live and it will dynamica
 HTML, CSS, Bootstrap, jQuery, AJAX, Giphy API
 
 ## See it here
-https://lschmittling.github.io/GifTastic
+https://lancehenry.github.io/GifTastic
